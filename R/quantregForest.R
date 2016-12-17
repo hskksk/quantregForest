@@ -12,10 +12,6 @@ function(x,y, nthreads = 1, keep.inbag=FALSE, ...){
   if( nrow(x) != length(y) )
     stop(" predictor variables and response variable must contain the same number of samples ")
 
-  if (any(is.na(x))) stop("NA not permitted in predictors")
-  if (any(is.na(y))) stop("NA not permitted in response")
-
-  
   
   ## Check for categorial predictors with too many categories (copied from randomForest package)
    if (is.data.frame(x)) {
